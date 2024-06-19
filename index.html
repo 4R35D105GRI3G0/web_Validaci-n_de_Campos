@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+            margin: 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding: 20px;
+            background-color: rgb(171, 144, 144);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #0438369a;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<form action="#" method="post">
+    <label for="username">Nombre de Usuario (5-15 caracteres alfanuméricos):</label>
+    <input type="text" id="username" name="username" pattern="^[a-zA-Z0-9]{5,15}$" title="Debe tener entre 5 y 15 caracteres alfanuméricos" required>
+
+    <label for="password">Contraseña (al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula, un número y un carácter especial):</label>
+    <input type="password" id="password" name="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%\^&\*])[A-Za-z\d!@#\$%\^&\*]{8,}" title="Debe tener al menos 8 caracteres, incluyendo una letra mayúscula, una minúscula, un número y un carácter especial" required>
+
+    <label for="email">Correo Electrónico:</label>
+    <input type="email" id="email" name="email" title="Debe ser una dirección de correo electrónico válida" required>
+
+    <label for="phone">Número de Teléfono (formato internacional, comenzando con + y hasta 15 dígitos):</label>
+    <input type="tel" id="phone" name="phone" pattern="^\+[1-9]{1}[0-9]{3,14}$" title="Debe seguir el formato internacional, comenzando con el signo + y hasta 15 dígitos" required>
+
+    <label for="dob">Fecha de Nacimiento (YYYY-MM-DD):</label>
+    <input type="date" id="dob" name="dob" pattern="\d{4}-\d{2}-\d{2}" title="Debe estar en el formato YYYY-MM-DD" required>
+
+    <label for="postalcode">Código Postal (exactamente 5 dígitos):</label>
+    <input type="text" id="postalcode" name="postalcode" pattern="^\d{5}$" title="Debe consistir en exactamente 5 dígitos" required>
+
+    <input type="submit" value="Registrar">
+</form>
+
+</body>
+</html>
